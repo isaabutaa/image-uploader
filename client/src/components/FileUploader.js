@@ -5,19 +5,25 @@ export default function FileUploader() {
 
     function handleChange(e) {
         const {name, value} = e.target;
+
         setUploadedImage({
             [name]: value
         });
     }
 
     return (
-        <form encType="multipart/form-data">
-            <input 
-                type="file" 
-                name="image" 
-                value={uploadedImage.image} 
-                onChange={handleChange}
-            />
-        </form>
-    )
+        <div>
+            <form action="/new-image" method="post" encType="multipart/form-data">
+                <input 
+                    type="file" 
+                    name="image" 
+                    value={uploadedImage.image} 
+                    onChange={handleChange}
+                />
+                <button type="submit">Upload Image</button>
+            </form>
+            {/* <img src={uploadedImage.image} alt="" /> */}
+
+        </div>
+    );
 };

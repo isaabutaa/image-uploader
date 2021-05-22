@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.schema;
+const Schema = mongoose.Schema;
 
 const imageSchema = new Schema({
     image: {
-        type: Image,
-        required: true
+        type: String
     }
 });
 
